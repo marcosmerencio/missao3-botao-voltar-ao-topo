@@ -1,0 +1,135 @@
+:root {
+    --bg: #0b0f1a;
+    --card: #161b2c;
+    --primary: #4f46e5;
+    --text: #ffffff;
+    --text-dim: #94a3b8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 40px;
+}
+
+/* Estilo do Botão Flutuante */
+#backToTop {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    /* Seguindo o padrão de 12-20px do seu card */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    z-index: 1000;
+    transition: all 0.4s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+}
+
+#backToTop:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.2);
+    box-shadow: 0 15px 25px rgba(79, 70, 229, 0.4);
+}
+
+/* Classes de Visibilidade com Animação */
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.5);
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+/* Estilização do cabeçalho */
+header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+header p {
+    color: var(--text-dim);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+        padding-bottom: 40px;
+        /* Espaço para o conjunto final */
+    }
+
+    /* Centralização vertical entre texto e botão */
+    .content-section {
+        padding-bottom: 0;
+    }
+
+    .content-section p:last-of-type {
+        min-height: 48px;
+        /* Mesma altura do botão */
+        display: flex;
+        align-items: center;
+        /* Centraliza o texto verticalmente */
+        padding-right: 65px;
+        /* Abre espaço para o botão */
+        margin-bottom: 0;
+        line-height: 1.4;
+    }
+
+    #backToTop {
+        width: 48px;
+        height: 48px;
+        bottom: 40px;
+        /* Alinhado com o padding-bottom do body */
+        right: 20px;
+        border-radius: 12px;
+    }
+
+    header h2 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 15px;
+        padding-bottom: 30px;
+    }
+
+    .content-section p:last-of-type {
+        padding-right: 60px;
+    }
+
+    #backToTop {
+        bottom: 30px;
+        /* Alinhado com o padding-bottom do body */
+        right: 15px;
+    }
+
+    header h2 {
+        font-size: 1.4rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+}
